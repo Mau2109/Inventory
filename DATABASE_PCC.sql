@@ -33,14 +33,14 @@ CREATE TABLE SERVICIO (
     ID_servicio SERIAL PRIMARY KEY,
     Descripcion VARCHAR(100),
     Tipo VARCHAR(20),
-    Estado VARCHAR(20),
     Recepcion DATE,
     Entrega DATE,
     Solucion VARCHAR(100),
     Abono FLOAT,
-    Servicio VARCHAR(20),
+    Servicio FLOAT,
     Total FLOAT,
     ID_cliente INT,
+	ID_equipo INT,
     FOREIGN KEY (ID_cliente) REFERENCES CLIENTE(ID_cliente)
 );
 
@@ -87,4 +87,7 @@ CREATE TABLE EQUIPO (
 
 ALTER TABLE CLIENTE 
 ADD FOREIGN KEY (ID_servicio) REFERENCES SERVICIO(ID_servicio),
+ADD FOREIGN KEY (ID_equipo) REFERENCES EQUIPO(ID_equipo);
+
+ALTER TABLE SERVICIO 
 ADD FOREIGN KEY (ID_equipo) REFERENCES EQUIPO(ID_equipo)

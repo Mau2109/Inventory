@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QLineEdit, QLabel, QPushButton, QWidget, QTextEdit
 from PyQt5.QtCore import Qt, pyqtSignal
 import psycopg2
+from data_base import conectar_bd
 
 
 class VentanaCategorias(QMainWindow):
@@ -53,13 +54,7 @@ class VentanaCategorias(QMainWindow):
 
         # Conectar a la base de datos y agregar la categoría
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             query = """
                 INSERT INTO CATEGORIA (Nombre, Descripcion) VALUES (%s, %s)

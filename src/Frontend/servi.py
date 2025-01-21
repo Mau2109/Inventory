@@ -15,7 +15,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Sistema PCC")
         self.setGeometry(100, 100, 1024, 768)
-
         self.initUI()
 
     def initUI(self):
@@ -34,7 +33,7 @@ class MainWindow(QMainWindow):
 
         # Agregar logo en la barra superior
         self.logo_label = QLabel(self)
-        self.logo_label.setPixmap(QPixmap("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/logo.png"))
+        self.logo_label.setPixmap(QPixmap("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/logo.png"))
         self.logo_label.setScaledContents(True)
         self.logo_label.setGeometry(800, 10, 224, 50)
 
@@ -46,7 +45,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Clientes
         self.btn_clientes = QPushButton(self)
-        self.btn_clientes.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/clientes.png"))
+        self.btn_clientes.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/clientes.png"))
         self.btn_clientes.setIconSize(QSize(64, 64))
         self.btn_clientes.setGeometry(20, 100, 100, 80)
         self.btn_clientes.setStyleSheet("background-color: transparent;")
@@ -54,7 +53,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Categorías
         self.btn_categorias = QPushButton(self)
-        self.btn_categorias.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/categoria.png"))
+        self.btn_categorias.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/categoria.png"))
         self.btn_categorias.setIconSize(QSize(64, 64))
         self.btn_categorias.setGeometry(20, 200, 100, 80)
         self.btn_categorias.setStyleSheet("background-color: transparent;")
@@ -62,7 +61,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Técnicos
         self.btn_tecnicos = QPushButton(self)
-        self.btn_tecnicos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/tecnico.png"))
+        self.btn_tecnicos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/tecnico.png"))
         self.btn_tecnicos.setIconSize(QSize(64, 64))
         self.btn_tecnicos.setGeometry(20, 300, 100, 80)
         self.btn_tecnicos.setStyleSheet("background-color: transparent;")
@@ -70,7 +69,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Repuestos
         self.btn_repuestos = QPushButton(self)
-        self.btn_repuestos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/repuesto.png"))
+        self.btn_repuestos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/repuesto.png"))
         self.btn_repuestos.setIconSize(QSize(64, 64))
         self.btn_repuestos.setGeometry(20, 400, 100, 80)
         self.btn_repuestos.setStyleSheet("background-color: transparent;")
@@ -78,7 +77,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Servicios
         self.btn_servicios = QPushButton(self)
-        self.btn_servicios.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/servicio.png"))
+        self.btn_servicios.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/servicio.png"))
         self.btn_servicios.setIconSize(QSize(64, 64))
         self.btn_servicios.setGeometry(20, 500, 100, 80)
         self.btn_servicios.setStyleSheet("background-color: transparent;")
@@ -86,7 +85,7 @@ class MainWindow(QMainWindow):
 
         # Botón para Equipos
         self.btn_equipos = QPushButton(self)
-        self.btn_equipos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Frontend/servicio.png"))
+        self.btn_equipos.setIcon(QIcon("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Frontend/equipo.png"))
         self.btn_equipos.setIconSize(QSize(64, 64))
         self.btn_equipos.setGeometry(20, 600, 100, 80)
         self.btn_equipos.setStyleSheet("background-color: transparent;")

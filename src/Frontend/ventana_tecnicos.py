@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QLineEdit, QLabel, QPushButton, QWidget
 import psycopg2
+from data_base import conectar_bd
 
 class VentanaTecnicos(QMainWindow):
     def __init__(self):
@@ -49,13 +50,7 @@ class VentanaTecnicos(QMainWindow):
             return
 
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             query = """
                 INSERT INTO TECNICO (Nombre_completo, Telefono) VALUES (%s, %s)

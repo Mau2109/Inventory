@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QLineEdit, QLabel, QPushBu
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIntValidator, QRegularExpressionValidator
 from PyQt5.QtCore import Qt, QRegularExpression
+from data_base import conectar_bd
 import psycopg2
 
 class VentanaRepuestos(QMainWindow):
@@ -110,13 +111,7 @@ class VentanaRepuestos(QMainWindow):
         Carga las categorías desde la base de datos y las agrega al combo box.
         """
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             cursor.execute("SELECT ID_categoria, Nombre FROM CATEGORIA")
             categorias = cursor.fetchall()
@@ -147,13 +142,7 @@ class VentanaRepuestos(QMainWindow):
             return
 
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="mau",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             query = """
                 INSERT INTO REPUESTO (Nombre, Descripcion, Marca, ID_categoria, Compra, Venta, Stock)

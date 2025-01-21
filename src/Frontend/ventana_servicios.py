@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QLineEdit, QLabel, QPushBu
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIntValidator, QRegularExpressionValidator
 from PyQt5.QtCore import Qt, QRegularExpression
+from data_base import conectar_bd
 import psycopg2
 
 
@@ -124,13 +125,7 @@ class VentanaServicios(QMainWindow):
         Carga los clientes desde la base de datos y los agrega al combo box.
         """
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             cursor.execute("SELECT ID_cliente, Nombre FROM CLIENTE")
             clientes = cursor.fetchall()
@@ -165,13 +160,7 @@ class VentanaServicios(QMainWindow):
             return
 
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="mau",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             query = """
                 INSERT INTO SERVICIO (Descripcion, Tipo, Estado, Recepcion, Entrega, Solucion, Abono, Servicio, Total, ID_cliente)

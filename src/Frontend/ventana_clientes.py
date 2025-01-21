@@ -6,7 +6,7 @@ from PyQt5.QtGui import QRegularExpressionValidator
 from PyQt5.QtWidgets import QMessageBox
 import psycopg2
 from ventana_categorias import VentanaCategorias  # Importar ventana_categorias.py
-
+from data_base import conectar_bd
 
 class VentanaClientes(QMainWindow):
     def __init__(self):
@@ -122,13 +122,7 @@ class VentanaClientes(QMainWindow):
         Carga las categorías desde la base de datos.
         """
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
             cursor.execute("SELECT ID_categoria, Nombre FROM CATEGORIA")
             categorias = cursor.fetchall()
@@ -157,13 +151,7 @@ class VentanaClientes(QMainWindow):
             return
 
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="mau",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
 
             # Verificar si el teléfono ya existe

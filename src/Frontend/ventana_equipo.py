@@ -4,6 +4,7 @@ from PyQt5.QtGui import QRegularExpressionValidator
 from PyQt5.QtWidgets import (QComboBox, QHBoxLayout, QLabel, QLineEdit,
                              QMainWindow, QMessageBox, QPushButton,
                              QVBoxLayout, QWidget)
+from data_base import conectar_bd
 
 
 class VentanaEquipo(QMainWindow):
@@ -67,13 +68,7 @@ class VentanaEquipo(QMainWindow):
             return
 # Conexión a la base de datos
         try:
-            conn = psycopg2.connect(
-                dbname="SERVIPCC",
-                user="postgres",
-                password="admin",
-                host="localhost",
-                port="5432"
-            )
+            conn = conectar_bd()
             cursor = conn.cursor()
 
             # Consulta SQL para insertar el equipo

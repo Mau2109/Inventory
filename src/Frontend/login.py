@@ -3,7 +3,7 @@ import psycopg2
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton
 from PyQt5.QtCore import Qt
 from servi import *
-sys.path.append("C:/Users/PC977/OneDrive/Documentos/Proyecto/SERVIPCC/Backend")
+sys.path.append("C:/Users/PC977/OneDrive/Documentos/Proyecto/Inventory/src/Backend")
 from Backend.login_b import *
 
 
